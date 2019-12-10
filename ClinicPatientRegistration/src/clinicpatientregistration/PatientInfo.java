@@ -668,13 +668,17 @@ public class PatientInfo extends javax.swing.JFrame {
                 break;
                 }
 
-        for(String x : PatientDetails)
-    System.out.println(x);
+        JOptionPane.showMessageDialog(null, "Removed Successful");
         
         }
+         }
+         else{
+                JOptionPane.showMessageDialog(null, "Remove Canceled");
+                
+                }
         
     }
-    }
+    
     
     //write the data into text area
     public void displayTextArea(){
