@@ -37,13 +37,13 @@ public class PatientInfo extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTAddress = new javax.swing.JTextField();
-        jTgender = new javax.swing.JTextField();
+        jTPhone = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTID = new javax.swing.JTextField();
         jCmedCondition = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jCmedCondition1 = new javax.swing.JComboBox<>();
+        jCgender = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -55,12 +55,12 @@ public class PatientInfo extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jTAddress1 = new javax.swing.JTextField();
-        jTgender1 = new javax.swing.JTextField();
+        jTphone1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jCmedCondition2 = new javax.swing.JComboBox<>();
+        jCmedCondition1 = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jCmedCondition3 = new javax.swing.JComboBox<>();
+        jCgender1 = new javax.swing.JComboBox<>();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
@@ -86,7 +86,7 @@ public class PatientInfo extends javax.swing.JFrame {
 
         jTAddress.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jTgender.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTPhone.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel6.setText("Medical Condition");
 
@@ -99,7 +99,7 @@ public class PatientInfo extends javax.swing.JFrame {
 
         jLabel8.setText("Patient Gender");
 
-        jCmedCondition1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Select---", "Male", "Female" }));
+        jCgender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Select---", "Male", "Female" }));
 
         jButton1.setText("Save");
 
@@ -135,9 +135,9 @@ public class PatientInfo extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTID)
-                                    .addComponent(jCmedCondition1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jCgender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jTAddress)
-                                    .addComponent(jTgender)
+                                    .addComponent(jTPhone)
                                     .addComponent(jTAge)
                                     .addComponent(jTName)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -164,7 +164,7 @@ public class PatientInfo extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,7 +176,7 @@ public class PatientInfo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCmedCondition1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,18 +204,18 @@ public class PatientInfo extends javax.swing.JFrame {
 
         jTAddress1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jTgender1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTphone1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel14.setText("Medical Condition");
 
-        jCmedCondition2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Select---", "Cold/Fever", "Chest Pain", "Back Pain", "Allegies", "Depression", "Stroke" }));
+        jCmedCondition1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Select---", "Cold/Fever", "Chest Pain", "Back Pain", "Allegies", "Depression", "Stroke" }));
 
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel15.setText("Search, Update and Delete");
 
         jLabel16.setText("Patient Gender");
 
-        jCmedCondition3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Select---", "Male", "Female" }));
+        jCgender1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Select---", "Male", "Female" }));
 
         jButton3.setText("Update Details");
 
@@ -244,32 +244,30 @@ public class PatientInfo extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jCmedCondition1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel16))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCgender1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jTAddress1)
-                                    .addComponent(jTgender1)
+                                    .addComponent(jTphone1)
                                     .addComponent(jTAge1)
                                     .addComponent(jTName1)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(jTID2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCmedCondition2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCmedCondition3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
                         .addGap(45, 45, 45))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
@@ -301,7 +299,7 @@ public class PatientInfo extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel11))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jTgender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTphone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -309,11 +307,11 @@ public class PatientInfo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCmedCondition3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCgender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCmedCondition2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCmedCondition1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
@@ -335,7 +333,7 @@ public class PatientInfo extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Search_Update_Remove Patient", jPanel2);
@@ -414,10 +412,10 @@ public class PatientInfo extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jCgender;
+    private javax.swing.JComboBox<String> jCgender1;
     private javax.swing.JComboBox<String> jCmedCondition;
     private javax.swing.JComboBox<String> jCmedCondition1;
-    private javax.swing.JComboBox<String> jCmedCondition2;
-    private javax.swing.JComboBox<String> jCmedCondition3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -446,17 +444,28 @@ public class PatientInfo extends javax.swing.JFrame {
     private javax.swing.JTextField jTID2;
     private javax.swing.JTextField jTName;
     private javax.swing.JTextField jTName1;
+    private javax.swing.JTextField jTPhone;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTgender;
-    private javax.swing.JTextField jTgender1;
+    private javax.swing.JTextField jTphone1;
     // End of variables declaration//GEN-END:variables
 
 //Public method to get values in the field
     public void patientInfo(){
-    String patientName, patientAge,patientGender, PatientAddress, patientPhone, PatientID;
+    String patientName, patientAge,patientGender, patientAddress, patientPhone, patientID, MedicalCondition;
     
+    patientName=jTName.getText(); //get the name of the patient
+    patientAge=jTAge.getText();//get age of the patient
+    patientGender=(String)jCgender.getSelectedItem();//Get the gender of the patient
+    patientAddress=jTAddress.getText(); //Get address of the patient
+    patientPhone=jTPhone.getText(); //the the phone number of the patient
+    patientID=jTID.getText();//Get the ID of the patient
+    MedicalCondition=(String)jCmedCondition.getSelectedItem();
+    
+    
+       
     
         
     }
     
+
 }
