@@ -5,6 +5,7 @@
  */
 package clinicpatientregistration;
 
+
 /**
  *
  * @author karis
@@ -461,11 +462,56 @@ public class PatientInfo extends javax.swing.JFrame {
     patientID=jTID.getText();//Get the ID of the patient
     MedicalCondition=(String)jCmedCondition.getSelectedItem();
     
-    
-       
+           
     
         
     }
     
+    public static void kk() {
+
+             String[] names = {"Zelma", "Clayton", "Casper"};
+             String[] age={"1", "3", "5"};
+             String[] gender={"Male", "Female", "Male"};
+             String[] address={"KK", "Jmwas", "Keka"};
+             String[] phone={"1234", "5678", "9012"};
+             String[] id={"11", "22", "33"};
+            
+             int[] priority = {1, 2, 3, 1, 3};
+
+             PatientList list;
+
+             list = new PatientList();
+             
+             testPatientList(list, names,age,gender,address,phone,id, priority, 0);
+
+             System.out.println("\nEnd of processing.");
+
+       }
+    
+      public static void testPatientList(PatientList list, String[] names, String[] age, String[] gender, String[] address, String[] phone, String[] id, int[] priority, int pos) {
+
+             PatientList copy;
+
+             if (pos < names.length) {
+
+                    list.add(names[pos],age[pos], gender[pos], address[pos],phone[pos],id[pos], priority[pos]);
+
+                    copy = list.clone();
+
+                    copy.print();
+
+                    System.out.println("Admitting: " + copy.nextAdmission());
+
+                    System.out.println();
+
+                    testPatientList(list, names, age, gender, address, phone, id, priority, pos + 1);
+
+                    testPatientList(copy, names, age, gender, address, phone, id, priority, pos + 1);
+
+             }
+
+       }
+
+        
 
 }

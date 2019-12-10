@@ -9,13 +9,18 @@ package clinicpatientregistration;
  *
  * @author karis
  */
-public class PatientNode {
- public Patient data;
- public PatientNode next;
- 
-  public PatientNode(Patient data, PatientNode next) {
-  this.data = data;
-  this.next = next;
-  }
+class PatientNode {
+
+       public Patient data;
+
+       public PatientNode next;
+
+       public PatientNode(Patient data, PatientNode next) {
+
+             this.data = data;
+
+             this.next = next;
+
+       }
     
 }
