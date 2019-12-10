@@ -18,7 +18,8 @@ import javax.swing.JTextArea;
  */
 public class PatientInfo extends javax.swing.JFrame {
   
-     LinkedList<Object> PatientDetails = new LinkedList<Object>();
+     LinkedList<String> PatientDetails = new LinkedList<String>();
+     
     
    private PatientNode head = null;
 	private int size = 0;
@@ -82,6 +83,7 @@ public class PatientInfo extends javax.swing.JFrame {
      */
     public PatientInfo() {
         initComponents();
+       
     }
 
     
@@ -136,10 +138,18 @@ public class PatientInfo extends javax.swing.JFrame {
         jTID2 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Patient Name");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jTName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -161,7 +171,7 @@ public class PatientInfo extends javax.swing.JFrame {
 
         jTID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jCmedCondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Select---", "Cold/Fever", "Chest Pain", "Back Pain", "Allegies", "Depression", "Stroke" }));
+        jCmedCondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Select---", "Cold/Fever", "Chest Pain", "Back Pain", "Allergies", "Depression", "Stroke" }));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setText("PATION INFORMATION RECORDS");
@@ -198,7 +208,7 @@ public class PatientInfo extends javax.swing.JFrame {
                         .addGap(128, 128, 128)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(136, 136, 136)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,8 +237,7 @@ public class PatientInfo extends javax.swing.JFrame {
                 .addGap(171, 171, 171))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,6 +316,11 @@ public class PatientInfo extends javax.swing.JFrame {
         jButton3.setText("Update Details");
 
         jButton4.setText("Remove Patient");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel17.setForeground(new java.awt.Color(255, 0, 0));
         jLabel17.setText("Enter Patient ID");
@@ -350,7 +364,7 @@ public class PatientInfo extends javax.swing.JFrame {
                                 .addComponent(jTID2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 46, Short.MAX_VALUE)))
                         .addGap(45, 45, 45))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
@@ -408,8 +422,8 @@ public class PatientInfo extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(154, 154, 154)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(201, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,15 +435,38 @@ public class PatientInfo extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Search_Update_Remove Patient", jPanel2);
 
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        jButton6.setText("SORT");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 908, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(319, 319, 319))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Sort Patient", jPanel3);
@@ -465,6 +502,30 @@ public class PatientInfo extends javax.swing.JFrame {
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+         System.out.println(PatientDetails);      // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       removePatient();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        //System.out.println("before sorting: " + listOfWeightLossFood);
+        PatientDetails.sort(Comparator.reverseOrder());
+        
+        printHospi(this);
+    
+    for(Object str : PatientDetails){ //iterate
+        //System.out.print(str +" ");
+        jTextArea2.append(str +"\n");//append into text area
+
+    }
+        
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -510,6 +571,7 @@ public class PatientInfo extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jCgender;
     private javax.swing.JComboBox<String> jCgender1;
     private javax.swing.JComboBox<String> jCmedCondition;
@@ -535,6 +597,7 @@ public class PatientInfo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTAddress;
     private javax.swing.JTextField jTAddress1;
     private javax.swing.JTextField jTAge;
@@ -546,6 +609,7 @@ public class PatientInfo extends javax.swing.JFrame {
     private javax.swing.JTextField jTPhone;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTphone1;
     // End of variables declaration//GEN-END:variables
 
@@ -589,12 +653,37 @@ public class PatientInfo extends javax.swing.JFrame {
         
     }
     
+    
+    //Method to remove Patient
+    public void removePatient(){
+    
+       // private LinkedList<String> list = new LinkedList<String>();
+        String input = jTID2.getText();
+         int resp =JOptionPane.showConfirmDialog(null, "Do you want to remove Patient ID "+input);
+         if (resp==0){
+        for(Iterator<String> iterator =PatientDetails.iterator(); iterator.hasNext(); ) {
+            if(iterator.next().contains((input))) { 
+                iterator.remove(); 
+
+                break;
+                }
+
+        for(String x : PatientDetails)
+    System.out.println(x);
+        
+        }
+        
+    }
+    }
+    
     //write the data into text area
     public void displayTextArea(){
+        
+        printHospi(this);
     
-    for(Object obj : PatientDetails){ //iterate
+    for(Object str : PatientDetails){ //iterate
         //System.out.print(str +" ");
-        jTextArea1.append(obj +" ");//append into text area
+        jTextArea1.append(str +"\n");//append into text area
 
     }
     }
@@ -614,11 +703,21 @@ public class PatientInfo extends javax.swing.JFrame {
 		System.out.println("Size = " + hospi.getSize2());
 		System.out.println("LastArrival = " + hospi.getLastArrival());
 		PatientNode current = hospi.getHead();
+                Object kk;
 		while(current != null){
-			System.out.println(current.data);
-			current = current.next;
-                        
-                    PatientDetails.add(current.data);
+			kk=current.data; 
+                    
+                    System.out.println(current.data);
+			
+//                      
+                     System.out.print(" Beb "+kk);
+                       System.out.println();
+                       
+                       PatientDetails.addLast(String.valueOf(current.data));
+                             
+                     
+                     current = current.next;
+                    
                 }
        
 	}
@@ -674,7 +773,7 @@ class Patient{
 	
 	@Override
 	public String toString(){
-		return "Patient Name-" + this.Name+" Age-"+this.Age+"yrs"+" Gender-"+this.Gender+" Address-"+this.Address+" Phone Number-"+this.Phone +" With Medical Condition-"+this.MedicalCondition+" arrived at-" + this.Arrival + " with priority-" + this.Priority;
+		return "Patient Name-" + this.Name+" Age-"+this.Age+"yrs"+" Gender-"+this.Gender+" Address-"+this.Address+" Phone Number-"+this.Phone +" Patient ID-"+this.ID+" With Medical Condition-"+this.MedicalCondition+" arrived at-" + this.Arrival + " with priority-" + this.Priority;
 	}
         
        
